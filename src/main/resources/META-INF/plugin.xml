@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>tools.codeme.jetbrains</id>
+    <name>Codeme — Autonomous Verification</name>
+    <vendor email="support@codeme.tools" url="https://codeme.tools">Codeme</vendor>
+    <description><![CDATA[
+        Deterministic syntax, quality, test verification, and invariant checks for IntelliJ IDEA, PyCharm, CLion, RustRover, WebStorm, GoLand, and Android Studio.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <externalAnnotator language="" implementationClass="tools.codeme.jetbrains.CodemeExternalAnnotator"/>
+        <toolWindow id="Codeme Verification" anchor="bottom" factoryClass="tools.codeme.jetbrains.CodemeToolWindowFactory"/>
+        <projectConfigurable
+            parentId="tools"
+            instance="tools.codeme.jetbrains.CodemeSettingsConfigurable"
+            id="tools.codeme.jetbrains.settings"
+            displayName="Codeme"/>
+    </extensions>
+</idea-plugin>
